@@ -5,6 +5,7 @@ import (
 	"awesomeGo/errhandling/filelistingserver/filelist"
 	"log"
 	"net/http"
+	_ "net/http/pprof"
 	"os"
 )
 
