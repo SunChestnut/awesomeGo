@@ -63,13 +63,13 @@ func calcTriangle(a, b int) int {
 }
 
 // 常量，Go中的常量一般不会用全部大写的字符串表示，因为大写字符在Go表示某些特殊含义
-const filenameinpackage = "file name in package"
+const filenameInPackage = "file name in package"
 
 func costs() {
-	const filenameinfunc = "file name in func"
+	const filenameInFunc = "file name in func"
 
-	fmt.Println(filenameinpackage)
-	fmt.Println(filenameinfunc)
+	fmt.Println(filenameInPackage)
+	fmt.Println(filenameInFunc)
 }
 
 // Go语言中没有专指枚举类型的关键字，而是使用一组 const() 来表示

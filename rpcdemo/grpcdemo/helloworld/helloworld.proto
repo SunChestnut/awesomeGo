@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option go_package = "awesomeGo/rpcdemo/grpcdemo/helloworld";
+
+package helloworld;
+
+service Greeter{
+  rpc SayHello(HelloRequest) returns(HelloReply){}
+  rpc HealthCheck(Check) returns(CheckReply){}
+}
+
+message HelloRequest{
+  int32 id = 1;
+  string name = 2;
+}
+
+message HelloReply{
+  string message = 1;
+  string replyTime = 2;
+}
+
+message Check{
+  int32 id = 1;
+}
+
+message CheckReply{
+  string message = 1;
+}

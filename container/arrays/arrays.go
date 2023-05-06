@@ -23,7 +23,10 @@ func main() {
 	// 二维数组
 	var grid [4][5]int
 
-	fmt.Println(arr1, arr2, arr3, grid)
+	fmt.Printf("arr1=%v\n", arr1) // 🍑output: [0 0 0 0 0]。数组声明后即被分配长度和赋初始值了
+	fmt.Printf("arr2=%v\n", arr2)
+	fmt.Printf("arr3=%v\n", arr3)
+	fmt.Printf("grid=%v\n", grid)
 
 	// 原始数组的遍历方式
 	for i := 0; i < len(arr3); i++ {

@@ -53,7 +53,7 @@ func worker(id int, c chan int) {
 func writeAndRead() {
 	// c1、c2 接收数据
 	c1, c2 := generator(), generator()
-	// 当 c1 或 c2 中存在数据时，worker 从其中接收数据
+	// 当 c1 或 c2 中存在数据时，helloworld 从其中接收数据
 	var worker = createWorker(0)
 
 	n := 0

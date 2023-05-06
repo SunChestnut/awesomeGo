@@ -13,7 +13,7 @@ func getWebSite() {
 		"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Mobile Safari/537.36")
 
 	// 重新实现 http.Client，以便查看网站是否发生了重定向。
-	// 如果发生了重定向，其地址存储在 via 中；其结果中，如果 error 值为 nil，则表示让 client 正常去重定向，如果返回错误则会终止重定向
+	// 如果发生了重定向，其地址存储在 via 中；其结果中，如果 error 值为 nil，则表示让 greeter_client 正常去重定向，如果返回错误则会终止重定向
 	client := http.Client{
 		CheckRedirect: func(req *http.Request, via []*http.Request) error {
 			fmt.Println("Redirect:", req)
@@ -36,5 +36,5 @@ func getWebSite() {
 }
 
 func main() {
-	getWebSite()
+	//getWebSite()
 }

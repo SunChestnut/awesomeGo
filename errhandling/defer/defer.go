@@ -5,15 +5,36 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
+	"log"
 	"os"
 )
 
+// tryDefer  打印结果为：3 2 1。defer 调用内部有个栈，先进后出。defer 会在函数退出前执行
 func tryDefer() {
-	// 打印结果为：3 2 1。defer 调用内部有个栈，先进后出
 	defer fmt.Println(1)
 	defer fmt.Println(2)
 	fmt.Println(3)
 	return
+}
+
+// deferAndPanic 函数中间 panic 后，defer 仍可以被执行到
+func deferAndPanic() {
+	fmt.Println(1)
+	defer fmt.Println(2)
+
+	panic(123)
+
+	fmt.Println(3)
+}
+
+// deferAndFatal log.Fatalln() 相当于直接调用了 os.Exit(1)，强制退出了程序，无法继续执行后续代码
+func deferAndFatal() {
+	fmt.Println(1)
+	defer fmt.Println(2)
+	// 无法执行到 defer
+	log.Fatalln("fatal...")
+
+	fmt.Println(3)
 }
 
 func writeFile(filename string) {
@@ -83,5 +104,7 @@ func writeFileHandleError(filename string) {
 func main() {
 	//tryDefer()
 	//writeFile("writeFib.txt")
-	writeFileHandleError("writeFib.txt")
+	//writeFileHandleError("writeFib.txt")
+
+	deferAndFatal()
 }

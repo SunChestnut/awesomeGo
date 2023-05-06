@@ -60,7 +60,7 @@ var tests = []struct {
 	{noError, 200, "no error"},
 }
 
-// 构造一个 web server 来测试 errorWrapper 函数
+// 构造一个 web greeter_server 来测试 errorWrapper 函数
 func TestErrWrapper(t *testing.T) {
 
 	for _, tt := range tests {
@@ -77,7 +77,7 @@ func TestErrWrapper(t *testing.T) {
 	}
 }
 
-// 启动一个 web server 来测试 errorWrapper 函数
+// 启动一个 web greeter_server 来测试 errorWrapper 函数
 func TestErrWrapperInServer(t *testing.T) {
 	for _, tt := range tests {
 		f := errorWrapper(tt.h)
