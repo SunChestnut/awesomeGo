@@ -1,7 +1,7 @@
 package main
 
 import (
-	"awesomeGo/rpc/jsonrpc/syl/server/service"
+	"awesomeGo/rpcdemo/jsonrpc/syl/server/service"
 	"encoding/json"
 	"fmt"
 	"log"
